@@ -1,0 +1,31 @@
+{
+  "name": "generator-ask-web",
+  "version": "0.0.0",
+  "description": "A Yeoman generator for Ask-CS web projects",
+  "license": "MIT",
+  "main": "generators/app/index.js",
+  "repository": "askcs/generator-ask-web",
+  "author": {
+    "name": "Jeremy Granadillo",
+    "url": "https://github.com/Blind238"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "chalk": "~1.1.0",
+    "lodash": "~3.10.0",
+    "yeoman-generator": "^0.20.2",
+    "yosay": "~1.0.2"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "yeoman-assert": "^2.0.0"
+  }
+}
