@@ -668,3 +668,7 @@ gulp.task('test', ['scripts'], function(done) {
 gulp.task('test:auto', ['watch'], function(done) {
   runTests(false, done);
 });
+
+gulp.task('default', ['clean'], function () {
+  gulp.start('build');
+});
