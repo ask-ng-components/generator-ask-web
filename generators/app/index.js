@@ -345,8 +345,8 @@ module.exports = generators.Base.extend({
      */
     uiFiles: function () {
       this.files.push({
-        src: 'src/app/components/navbar/__' + this.props.ui.key + '-navbar.html',
-        dest: 'src/app/components/navbar/navbar.html',
+        src: 'src/app/components/navbar/__' + this.props.ui.key + '-navbar.' + this.props.htmlPreprocessor.extension,
+        dest: 'src/app/components/navbar/navbar.' + this.props.htmlPreprocessor.extension,
         template: false
       });
 
