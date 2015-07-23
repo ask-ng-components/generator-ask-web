@@ -57,21 +57,63 @@ module.exports = generators.Base.extend({
       }]
     },{
       type: 'list',
-      name: 'htmlPreprocessor',
-      message: 'Which HTML preprocessor do you want to use?',
+      name: 'ui',
+      message: 'Which UI framework do you want?',
       choices: [{
-        name: 'None, use regular HTML',
+        value: {
+          key: 'bootstrap',
+          module: null
+        },
+        name: 'Bootstrap, the most popular HTML, CSS, and JS framework'
+      },{
+        value: {
+          key: 'angular-material',
+          module: 'ngMaterial'
+        },
+        name: 'Angular Material, the reference implementation of the Material Design specification'
+      },{
         value: {
           key: 'none',
-          extension: 'html'
-        }
-      },{
-        name: 'Jade',
+          module: null
+        },
+        name: 'None'
+      }],
+      when: function(answers){
+        return answers.projectType === 'askApp';
+      }
+    },{
+      type: 'list',
+      name: 'bootstrapComponents',
+      message: 'How do you want to implement your Bootstrap components?',
+      default: 2,
+      choices: [{
         value: {
-          key: 'jade',
-          extension: 'jade'
-        }
-      }]
+          key: 'ui-bootstrap',
+          module: 'ui.bootstrap'
+        },
+        name: 'Angular UI Bootstrap, Bootstrap components written in pure AngularJS by the AngularUI Team'
+      },{
+        value: {
+          key: 'angular-strap',
+          module: 'mgcrea.ngStrap'
+        },
+        name: 'AngularStrap, AngularJS 1.2+ native directives for Bootstrap 3'
+      },{
+        value: {
+          key: 'official',
+          module: null
+        },
+        name: 'The official jQuery implementation of Bootstrap'
+      },{
+        value: {
+          key: 'none',
+          module: null
+        },
+        name: 'No JavaScript, just CSS'
+      }],
+      when: function(answers){
+        return answers.projectType === 'askApp';
+      }
     },{
       type: 'list',
       name: 'cssPreprocessor',
@@ -118,6 +160,23 @@ module.exports = generators.Base.extend({
       when: function(answers){
         return answers.projectType === 'askApp';
       }
+    },{
+      type: 'list',
+      name: 'htmlPreprocessor',
+      message: 'Which HTML preprocessor do you want to use?',
+      choices: [{
+        name: 'None, use regular HTML',
+        value: {
+          key: 'none',
+          extension: 'html'
+        }
+      },{
+        name: 'Jade',
+        value: {
+          key: 'jade',
+          extension: 'jade'
+        }
+      }]
     }];
 
     this.prompt(prompts, function (props) {
@@ -130,10 +189,6 @@ module.exports = generators.Base.extend({
       props.router = {
         key: 'angular-route',
         module: 'ngRoute'
-      };
-      props.ui = {
-        key: 'bootstrap',
-        module: null
       };
       props.jQuery = {
         key: 'jquery2'
@@ -152,16 +207,20 @@ module.exports = generators.Base.extend({
         key: 'sanitize',
         module: 'ngSanitize'
       }];
-      props.bootstrapComponents = {
-        key: 'official',
-        module: null
-      };
       props.foundationComponents = {
         key: null,
         modules: null
       };
 
       if (props.projectType !== 'askApp') {
+        props.ui = {
+          key: 'bootstrap',
+          module: null
+        };
+        props.bootstrapComponents = {
+          key: 'official',
+          module: null
+        };
         props.jsPreprocessor = {
           key: 'none',
           extension: 'js',
