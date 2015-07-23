@@ -227,8 +227,6 @@ gulp.task('inject', ['scripts'], function () {
  */
 
 
-var $ = require('gulp-load-plugins')();
-
 <% if (props.htmlPreprocessor.key !== 'none') {-%>
 gulp.task('markups', function() {
   function renameToHtml(path) {
@@ -257,8 +255,6 @@ gulp.task('markups', function() {
 <% if (props.jsPreprocessor.srcExtension === 'es6') { -%>
 var webpack = require('webpack-stream');
 <% } -%>
-
-var $ = require('gulp-load-plugins')();
 
 <% if (props.jsPreprocessor.srcExtension !== 'es6') { -%>
 <%   if (props.jsPreprocessor.key === 'typescript') { -%>
@@ -348,7 +344,6 @@ gulp.task('scripts:watch', ['scripts'], function (callback) {
  * Adapted from generator-gulp-angular's _server.js
  */
 
-var browserSync = require('browser-sync');
 var browserSyncSpa = require('browser-sync-spa');
 
 var util = require('util');
@@ -421,8 +416,6 @@ gulp.task('serve:e2e-dist', ['build'], function () {
  * Adapted from generator-gulp-angular's _styles.js
  */
 
-var browserSync = require('browser-sync');
-
 
 gulp.task('styles', function () {
 <% if (props.cssPreprocessor.key === 'less') { -%>
@@ -489,8 +482,6 @@ gulp.task('styles', function () {
  * Adapted from generator-gulp-angular's _watch.js
  */
 
-var browserSync = require('browser-sync');
-
 function isOnlyChange(event) {
   return event.type === 'changed';
 }
@@ -549,9 +540,6 @@ gulp.task('watch', [<%- watchTaskDeps.join(', ') %>], function () {
  * Adapted from generator-gulp-angular's e2e-tests.js
  */
 
-var browserSync = require('browser-sync');
-
-var $ = require('gulp-load-plugins')();
 
 // Downloads the selenium webdriver
 gulp.task('webdriver-update', $.protractor.webdriver_update);
