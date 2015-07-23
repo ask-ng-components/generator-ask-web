@@ -352,8 +352,8 @@ module.exports = generators.Base.extend({
 
       if(this.props.router.module !== null) {
         this.files.push({
-          src: 'src/app/main/__' + this.props.ui.key + '.html',
-          dest: 'src/app/main/main.html',
+          src: 'src/app/main/__' + this.props.ui.key + '.' + this.props.htmlPreprocessor.extension,
+          dest: 'src/app/main/main.' + this.props.htmlPreprocessor.extension,
           template: true
         });
       }
