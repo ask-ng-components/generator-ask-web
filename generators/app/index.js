@@ -112,7 +112,7 @@ module.exports = generators.Base.extend({
         name: 'No JavaScript, just CSS'
       }],
       when: function(answers){
-        return answers.projectType === 'askApp';
+        return (answers.projectType === 'askApp' && answers.ui.key === 'bootstrap');
       }
     },{
       type: 'list',
@@ -209,8 +209,15 @@ module.exports = generators.Base.extend({
       }];
       props.foundationComponents = {
         key: null,
-        modules: null
+        module: null
       };
+
+      if (props.ui.key !== 'bootstrap') {
+        props.bootstrapComponents = {
+          key: null,
+          module: null
+        }
+      }
 
       if (props.projectType !== 'askApp') {
         props.ui = {
