@@ -236,6 +236,10 @@ module.exports = generators.Base.extend({
       };
 
       this.props = props;
+
+      this.computedPaths = {
+        appToBower: path.relative(this.props.paths.src, '')
+      };
       // To access props later use this.props.someOption;
 
       done();
@@ -246,6 +250,7 @@ module.exports = generators.Base.extend({
 
     saveProps: function () {
       this.config.set('props', this.props);
+      this.config.set('computedPaths', this.computedPaths);
     },
 
     /**
