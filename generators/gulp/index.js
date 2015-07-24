@@ -6,7 +6,6 @@ module.exports = generators.Base.extend({
   initializing: function () {
     // Grab and use config from yo-rc.json
     this.props =  this.config.get('props');
-    this.imageMin = this.config.get('imageMin');
 
   },
 
@@ -23,9 +22,9 @@ module.exports = generators.Base.extend({
         this.props.jsPreprocessor.extension,
         this.props.htmlPreprocessor.extension
       ];
-      if (this.imageMin) {
-        this.processedFileExtension = this.processedFileExtension.concat(['jpg', 'png', 'gif', 'svg']);
-      }
+      // for imageMin
+      this.processedFileExtension = this.processedFileExtension.concat(['jpg', 'png', 'gif', 'svg']);
+
       this.processedFileExtension = _.chain(this.processedFileExtension)
         .uniq()
         .filter(_.isString)

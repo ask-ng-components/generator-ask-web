@@ -40,7 +40,6 @@ module.exports = generators.Base.extend({
   prompting: function () {
     var done = this.async();
 
-    this.imageMin = true;
     this.includeModernizr = false;
 
     // Have Yeoman greet the user.
@@ -530,12 +529,8 @@ module.exports = generators.Base.extend({
           .replace(/\n/g, '\n  ');
       }
 
-    },
-
-    saveOtherProps: function () {
-      this.config.set('appName', this.appName);
-      this.config.set('imageMin', this.imageMin);
     }
+
   }, // end configuring
 
   writing: {
