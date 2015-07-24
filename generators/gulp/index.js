@@ -9,7 +9,6 @@ module.exports = generators.Base.extend({
     this.imageMin = this.config.get('imageMin');
     this.qrCode = false;
 
-    this.computedPaths = this.config.get('computedPaths');
   },
 
   configuring: {

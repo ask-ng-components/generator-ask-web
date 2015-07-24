@@ -243,7 +243,6 @@ module.exports = generators.Base.extend({
         };
       }
 
-
       props.paths = {
         src: this.options['src-path'],
         dist: this.options['dist-path'],
@@ -252,12 +251,6 @@ module.exports = generators.Base.extend({
       };
 
       this.props = props;
-
-      this.computedPaths = {
-        appToBower: path.relative(this.props.paths.src, '')
-      };
-
-      this.appName = _.camelCase(this.props.name);
       // To access props later use this.props.someOption;
 
       done();
@@ -266,9 +259,17 @@ module.exports = generators.Base.extend({
 
   configuring: {
 
+    addDerivedProps: function () {
+      this.props.computedPaths = {
+        appToBower: path.relative(this.props.paths.src, '')
+      };
+
+      this.props.appName = _.camelCase(this.props.name);
+      // body...
+    },
+
     saveProps: function () {
       this.config.set('props', this.props);
-      this.config.set('computedPaths', this.computedPaths);
     },
 
     /**
