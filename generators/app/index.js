@@ -14,25 +14,29 @@ module.exports = generators.Base.extend({
 
     this.option('src-path',{
       type: String,
-      defaults: 'src'
+      defaults: 'src',
+      desc: 'Change src path'
     });
     this.option('dist-path',{
       type: String,
-      defaults: 'dist'
+      defaults: 'dist',
+      desc: 'Change dist path'
     });
     this.option('e2e-path',{
       type: String,
-      defaults: 'e2e'
+      defaults: 'e2e',
+      desc: 'Change e2e path'
     });
     this.option('tmp-path',{
       type: String,
-      defaults: '.tmp'
+      defaults: '.tmp',
+      desc: 'Change tmp path'
     });
 
     this.option('qrcode',{
       type: Boolean,
       defaults: false,
-      description: 'Displays QR Code pointing to the app when being served'
+      desc: 'Displays QR Code pointing to the app when being served'
     });
 
   },
