@@ -34,7 +34,6 @@ module.exports = generators.Base.extend({
   prompting: function () {
     var done = this.async();
 
-    this.appName = 'test-app';
     this.imageMin = true;
     this.qrCode = false;
     this.includeModernizr = false;
@@ -45,6 +44,14 @@ module.exports = generators.Base.extend({
     ));
 
     var prompts = [{
+      type: 'input',
+      name: 'name',
+      message: 'Enter a name for the project',
+      default: path.basename(process.cwd()),
+      validate: function (input) {
+        return input.length ? true : false;
+      }
+    },{
       type: 'list',
       name: 'projectType',
       message: 'What kind of project do you want?',
@@ -248,6 +255,8 @@ module.exports = generators.Base.extend({
       this.computedPaths = {
         appToBower: path.relative(this.props.paths.src, '')
       };
+
+      this.appName = _.camelCase(this.props.name);
       // To access props later use this.props.someOption;
 
       done();
