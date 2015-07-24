@@ -6,7 +6,7 @@
     var $timeout;
     var toastr;
 
-    beforeEach(module('<%- appName %>'));
+    beforeEach(module('<%- props.appName %>'));
     beforeEach(inject(function(_$controller_, _$timeout_, _webDevTec_, _toastr_) {
       spyOn(_webDevTec_, 'getTec').and.returnValue([{}, {}, {}, {}, {}]);
       spyOn(_toastr_, 'info').and.callThrough();

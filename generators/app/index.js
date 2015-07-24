@@ -46,8 +46,9 @@ module.exports = generators.Base.extend({
     var prompts = [{
       type: 'input',
       name: 'name',
-      message: 'Enter a name for the project',
-      default: path.basename(process.cwd()),
+      message: 'Enter a name for the project:',
+      default: _.kebabCase(path.basename(process.cwd())),
+      filter: _.kebabCase,
       validate: function (input) {
         return input.length ? true : false;
       }

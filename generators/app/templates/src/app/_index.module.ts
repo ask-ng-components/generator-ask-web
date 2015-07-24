@@ -15,10 +15,10 @@ declare var malarkey: any;
 declare var toastr: Toastr;
 declare var moment: moment.MomentStatic;
 
-module <%- appName %> {
+module <%- props.appName %> {
   'use strict';
 
-  angular.module('<%- appName %>', [<%- modulesDependencies %>])
+  angular.module('<%- props.appName %>', [<%- modulesDependencies %>])
     .constant('malarkey', malarkey)
     .constant('toastr', toastr)
     .constant('moment', moment)

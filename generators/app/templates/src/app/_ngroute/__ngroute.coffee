@@ -1,4 +1,4 @@
-angular.module '<%- appName %>'
+angular.module '<%- props.appName %>'
   .config ($routeProvider) ->
     'ngInject'
     $routeProvider

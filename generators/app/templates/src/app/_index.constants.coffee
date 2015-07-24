@@ -1,4 +1,4 @@
-angular.module('<%- appName %>')
+angular.module('<%- props.appName %>')
   .constant 'malarkey', malarkey
   .constant 'toastr', toastr
   .constant 'moment', moment

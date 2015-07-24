@@ -1,1 +1,1 @@
-angular.module '<%- appName %>', [<%- modulesDependencies %>]
+angular.module '<%- props.appName %>', [<%- modulesDependencies %>]

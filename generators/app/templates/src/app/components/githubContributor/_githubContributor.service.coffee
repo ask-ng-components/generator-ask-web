@@ -1,4 +1,4 @@
-angular.module '<%- appName %>'
+angular.module '<%- props.appName %>'
   .factory 'githubContributor', ($log, $http) ->
     'ngInject'
     apiHost = 'https://api.github.com/repos/Swiip/generator-gulp-angular'

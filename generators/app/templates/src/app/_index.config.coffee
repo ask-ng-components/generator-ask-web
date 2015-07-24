@@ -1,4 +1,4 @@
-angular.module '<%- appName %>'
+angular.module '<%- props.appName %>'
   .config ($logProvider, toastr) ->
     'ngInject'
     # Enable log

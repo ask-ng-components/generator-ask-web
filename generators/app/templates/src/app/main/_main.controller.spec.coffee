@@ -1,6 +1,6 @@
 describe 'controllers', ->
   # @todo Complete coverage test
-  beforeEach module('<%- appName %>')
+  beforeEach module('<%- props.appName %>')
   it 'should define more than 5 awesome things', inject(($controller) ->
     vm = $controller('MainController')
     expect(angular.isArray(vm.awesomeThings)).toBeTruthy()

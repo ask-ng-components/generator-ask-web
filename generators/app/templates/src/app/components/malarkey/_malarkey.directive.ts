@@ -1,4 +1,4 @@
-module <%- appName %> {
+module <%- props.appName %> {
   'use strict';
 
   interface IProjectsScope extends ng.IScope {
