@@ -349,7 +349,7 @@ var browserSyncSpa = require('browser-sync-spa');
 var util = require('util');
 
 var proxyMiddleware = require('http-proxy-middleware');
-<% if(qrCode) { -%>
+<% if(props.qrCode) { -%>
 
 var qrcode = require('qrcode-terminal');
 <% } -%>
@@ -382,7 +382,7 @@ function browserSyncInit(baseDir, browser) {
     startPath: '/',
     server: server,
     browser: browser
-<% if(qrCode) { -%>
+<% if(props.qrCode) { -%>
   }, function(err, bs) {
     qrcode.generate(bs.options.get('urls').get('external'));
   });

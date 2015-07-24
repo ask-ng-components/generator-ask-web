@@ -7,7 +7,6 @@ module.exports = generators.Base.extend({
     // Grab and use config from yo-rc.json
     this.props =  this.config.get('props');
     this.imageMin = this.config.get('imageMin');
-    this.qrCode = false;
 
   },
 

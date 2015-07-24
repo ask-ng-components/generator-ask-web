@@ -29,13 +29,18 @@ module.exports = generators.Base.extend({
       defaults: '.tmp'
     });
 
+    this.option('qrcode',{
+      type: Boolean,
+      defaults: false,
+      description: 'Displays QR Code pointing to the app when being served'
+    });
+
   },
 
   prompting: function () {
     var done = this.async();
 
     this.imageMin = true;
-    this.qrCode = false;
     this.includeModernizr = false;
 
     // Have Yeoman greet the user.
@@ -249,6 +254,8 @@ module.exports = generators.Base.extend({
         e2e: this.options['e2e-path'],
         tmp: this.options['tmp-path']
       };
+
+      props.qrCode = this.options['qrcode'];
 
       this.props = props;
       // To access props later use this.props.someOption;
