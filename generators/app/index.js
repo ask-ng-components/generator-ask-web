@@ -212,13 +212,6 @@ module.exports = generators.Base.extend({
         module: null
       };
 
-      if (props.ui.key !== 'bootstrap') {
-        props.bootstrapComponents = {
-          key: null,
-          module: null
-        }
-      }
-
       if (props.projectType !== 'askApp') {
         props.ui = {
           key: 'bootstrap',
@@ -234,6 +227,14 @@ module.exports = generators.Base.extend({
           srcExtension: 'js'
         };
       }
+
+      if (props.ui.key !== 'bootstrap') {
+        props.bootstrapComponents = {
+          key: null,
+          module: null
+        };
+      }
+
 
       props.paths = {
         src: this.options['src-path'],
