@@ -44,8 +44,6 @@ module.exports = generators.Base.extend({
   prompting: function () {
     var done = this.async();
 
-    this.includeModernizr = false;
-
     // Have Yeoman greet the user.
     this.log(yosay(
       'Welcome to the smashing ' + chalk.red('AskWeb') + ' generator!'
@@ -259,6 +257,7 @@ module.exports = generators.Base.extend({
       };
 
       props.qrCode = this.options['qrcode'];
+      props.includeModernizr = false; // turn this into an option when needed
 
       this.props = props;
       // To access props later use this.props.someOption;

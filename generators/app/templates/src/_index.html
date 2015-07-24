@@ -1,5 +1,5 @@
 <!doctype html>
-<html<% if (includeModernizr) { %> class="no-js"<% } %> ng-app="<%- props.appName %>">
+<html<% if (props.includeModernizr) { %> class="no-js"<% } %> ng-app="<%- props.appName %>">
   <head>
     <meta charset="utf-8">
     <title><%- props.appName %></title>
@@ -18,7 +18,7 @@
     <!-- css files will be automatically insert here -->
     <!-- endinject -->
     <!-- endbuild -->
-<% if (includeModernizr) { -%>
+<% if (props.includeModernizr) { -%>
 
     <!-- build:js(<%- props.paths.src %>) scripts/modernizr.js -->
     <script src="<%- props.computedPaths.appToBower %>/bower_components/modernizr/modernizr.js"></script>

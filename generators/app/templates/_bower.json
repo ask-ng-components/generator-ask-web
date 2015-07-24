@@ -2,7 +2,7 @@
   "name": "<%- props.appName %>",
   "version": "0.0.0",
   "dependencies": {
-<% if (includeModernizr) { -%>
+<% if (props.includeModernizr) { -%>
     "modernizr": "~2.8.3",
 <% } if (angularModulesObject.animate) { -%>
     "angular-animate": "<%- props.angularVersion %>",
