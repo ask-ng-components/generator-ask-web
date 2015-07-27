@@ -571,7 +571,7 @@ gulp.task('protractor:dist', ['serve:e2e-dist', 'webdriver-update'], runProtract
  */
 
 <% if (props.jsPreprocessor.key === 'typescript') { -%>
-  
+
 var tsd = require('tsd');
 
 var tsdJson = 'tsd.json';

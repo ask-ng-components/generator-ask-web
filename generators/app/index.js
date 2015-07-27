@@ -221,10 +221,6 @@ module.exports = generators.Base.extend({
         key: 'sanitize',
         module: 'ngSanitize'
       }];
-      props.foundationComponents = {
-        key: null,
-        module: null
-      };
 
       if (props.projectType !== 'askApp') {
         props.ui = {
@@ -256,7 +252,7 @@ module.exports = generators.Base.extend({
         tmp: this.options['tmp-path']
       };
 
-      props.qrCode = this.options['qrcode'];
+      props.qrCode = this.options.qrcode;
       props.includeModernizr = false; // turn this into an option when needed
 
       this.props = props;
@@ -337,8 +333,7 @@ module.exports = generators.Base.extend({
         this.props.resource.module,
         this.props.router.module,
         this.props.ui.module,
-        this.props.bootstrapComponents.module,
-        this.props.foundationComponents.module
+        this.props.bootstrapComponents.module
       ]);
 
       this.modulesDependencies = ngModules

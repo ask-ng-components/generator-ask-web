@@ -65,13 +65,6 @@ module.exports = generators.Base.extend({
         if(this.props.cssPreprocessor.key !== 'none') {
           this.wiredepExclusions.push('/bootstrap\\.css/');
         }
-      } else if (this.props.ui.key === 'foundation') {
-        if(this.props.foundationComponents.key !== 'official') {
-          this.wiredepExclusions.push('/foundation\\.js/');
-        }
-        if(this.props.cssPreprocessor.extension === 'scss') {
-          this.wiredepExclusions.push('/foundation\\.css/');
-        }
       }
     }
   },
