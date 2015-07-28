@@ -6,6 +6,7 @@
     "protractor.conf.js",
 
     "e2e/.jshintrc",
+    "e2e/main.po.js",
     "e2e/main.spec.js",
 
     "src/favicon.ico",
@@ -20,8 +21,6 @@
     "tsd.json",
 
     "karma.conf.js",
-
-    "e2e/main.po.js",
 
     "src/app/index.module.js",
     "src/app/index.config.js",
