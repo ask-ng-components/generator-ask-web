@@ -75,5 +75,10 @@ module.exports = generators.Base.extend({
       this.destinationPath('gulpfile.js'),
       this
     );
+    this.fs.copyTpl(
+      this.templatePath('_conf.js'),
+      this.destinationPath('conf.js'),
+      this
+    );
   }
 });

@@ -12,41 +12,7 @@ var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del']
 });
 
-var conf = {};
-/**
- *  The main paths of your project handle these with care
- */
-conf.paths = {
-  src: '<%- props.paths.src %>',
-  dist: '<%- props.paths.dist %>',
-  tmp: '<%- props.paths.tmp %>',
-  e2e: '<%- props.paths.e2e %>'
-};
-
-/**
- *  Wiredep is the lib which inject bower dependencies in your project
- *  Mainly used to inject script tags in the index.html but also used
- *  to inject css preprocessor deps and js files in karma
- */
-conf.wiredep = {
-<% if(wiredepExclusions.length > 0) { -%>
-  exclude: [<%- wiredepExclusions.join(', ') %>],
-<% } -%>
-  directory: 'bower_components'
-};
-
-/**
- *  Common implementation for an error handler of a Gulp plugin
- */
-conf.errorHandler = function(title) {
-  'use strict';
-
-  return function(err) {
-    gutil.log(gutil.colors.red('[' + title + ']'), err.toString());
-    this.emit('end');
-  };
-};
-
+var conf = require('./conf');
 
 /**
  * Adapted from generator-gulp-angular's _build.js
