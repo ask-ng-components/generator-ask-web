@@ -1,47 +1,77 @@
-# generator-ask-web [![Build Status](https://secure.travis-ci.org/blind238/generator-ask-web.png?branch=master)](https://travis-ci.org/blind238/generator-ask-web)
+# generator-ask-web
 
-> [Yeoman](http://yeoman.io) generator
+A [Yeoman](http://yeoman.io) generator to scaffold web projects for Ask-CS.
 
+Mostly based on [generator-gulp-angular](https://github.com/Swiip/generator-gulp-angular).
 
-## Getting Started
+The project will be updated periodically and will include applicable generator-gulp-angular updates.
 
-### What is Yeoman?
+## Installation
 
-Trick question. It's not a thing. It's this guy:
+You need [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your system (the Node.js installation should include npm by default)
 
-![](http://i.imgur.com/JHaAlBJ.png)
+If you don't already have gulp, bower and Yeoman installed globally, you can do so by executing:
 
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
+`npm install -g  gulp bower yo`
 
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
+To install this generator, do:
 
-```bash
-npm install -g yo
-```
+`npm install -g generator-ask-web`
 
-### Yeoman Generators
+You're ready to scaffold a project!
 
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
+## Usage
 
-To install generator-ask-web from npm, run:
+First make a directory for your project and navigate into it:
 
-```bash
-npm install -g generator-ask-web
-```
+`mkdir my-project && cd my-project`
 
-Finally, initiate the generator:
+Then start the generator, by doing:
 
-```bash
-yo ask-web
-```
+`yo ask-web`
 
-### Getting To Know Yeoman
+The generator will then ask for the project's name (default is the current directory name in kebab-case/spinal-case). The project's main module will have that same name in camelCase (`myProject` in this example).
 
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
+Next, you'll need to choose between making a 'Promo website' and an 'Ask-CS application'. A 'Promo website' will have [Bootstrap](http://getbootstrap.com/) by default.
 
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
+Remaining options:
 
+**Promo website**:
+- CSS or Sass (*.scss)
+- HTML or Jade (*.jade)
+
+**Ask-CS application** includes above and the following:
+- UI framework
+  - Bootstrap
+  - Angular Material
+  - None
+- (if Bootstrap) Bootstrap implementation
+  - Angular UI Bootstrap
+  - AngularStrap
+  - Official jQuery implementation
+  - None, just CSS
+- JavaScript preprocessor
+  - None
+  - ES6 (ES2015), using Babel
+  - TypeScript
+
+Once done, the generator will scaffold the project and install dependencies, and your're ready to go!
+
+## Workflow
+
+- `gulp` or `gulp build` to build an optimized version of your application in `/dist`
+- `gulp serve` to launch a browser sync server on your source files
+- `gulp serve:dist` to launch a server on your optimized application
+- `gulp test` to launch your unit tests with Karma
+- `gulp test:auto` to launch your unit tests with Karma in watch mode
+- `gulp protractor` to launch your e2e tests with Protractor
+- `gulp protractor:dist` to launch your e2e tests with Protractor on the dist files
+
+## TODO
+Things that will be worked on in the near future:
+- A subgenerator to help create components (reusable angular services and directives with html/jade templates)
+- A subgenerator to replace gulpfile.js with an updated version
+- A subgenerator to update package.json? Need to think about this still
 
 ## License
-
 MIT
