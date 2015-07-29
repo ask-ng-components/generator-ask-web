@@ -55,7 +55,7 @@ Remaining options:
   - ES6 (ES2015), using Babel
   - TypeScript
 
-Once done, the generator will scaffold the project and install dependencies, and your're ready to go!
+Once done, the generator will scaffold the project and install dependencies, and your're ready to go! (installing dependencies can take some time)
 
 ## Workflow
 
@@ -71,7 +71,8 @@ Once done, the generator will scaffold the project and install dependencies, and
 Things that will be worked on in the near future:
 - A subgenerator to help create components (reusable angular services and directives with html/jade templates)
 - A subgenerator to replace gulpfile.js with an updated version
-- A subgenerator to update package.json? Need to think about this still
+- A subgenerator to update package.json with the gulpfile? Not sure on this
+- Include useful Ask-CS components depending on project type
 
 ## License
 MIT
