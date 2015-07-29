@@ -7,8 +7,7 @@
     var toastr;
 
     beforeEach(module('<%- props.appName %>'));
-    beforeEach(inject(function(_$controller_, _$timeout_, _webDevTec_, _toastr_) {
-      spyOn(_webDevTec_, 'getTec').and.returnValue([{}, {}, {}, {}, {}]);
+    beforeEach(inject(function(_$controller_, _$timeout_, _toastr_) {
       spyOn(_toastr_, 'info').and.callThrough();
 
       vm = _$controller_('MainController');
@@ -29,11 +28,6 @@
       vm.showToastr();
       expect(toastr.info).toHaveBeenCalled();
       expect(vm.classAnimation).toEqual('');
-    });
-
-    it('should define more than 5 awesome things', function() {
-      expect(angular.isArray(vm.awesomeThings)).toBeTruthy();
-      expect(vm.awesomeThings.length === 5).toBeTruthy();
     });
   });
 })();
