@@ -12,12 +12,3 @@ div(layout="vertical" layout-fill)
       md-button.md-raised.animated.infinite(ng-class="main.classAnimation", ng-click="main.showToastr()") Splendid Toastr
       p
         | With ♥ thanks to the contributions of #[acme-malarkey(extra-values="['Yeoman', 'Gulp', 'Angular']")]
-    .tech(layout-align="center")
-      md-card(ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'")
-        .thumbnail
-          img.pull-right(ng-src="assets/images/{{ awesomeThing.logo }}", alt="{{ awesomeThing.title }}")
-          .caption
-            h3 {{ awesomeThing.title }}
-            p {{ awesomeThing.description }}
-            p
-              a(ng-href="{{ awesomeThing.url }}") {{ awesomeThing.url }}

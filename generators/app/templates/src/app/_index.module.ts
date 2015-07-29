@@ -8,7 +8,6 @@
 /// <reference path="main/main.controller.ts" />
 /// <reference path="../app/components/navbar/navbar.directive.ts" />
 /// <reference path="../app/components/malarkey/malarkey.directive.ts" />
-/// <reference path="../app/components/webDevTec/webDevTec.service.ts" />
 /// <reference path="../app/components/githubContributor/githubContributor.service.ts" />
 
 declare var malarkey: any;
@@ -28,7 +27,6 @@ module <%- props.appName %> {
 <% } %>
     .run(runBlock)
     .service('githubContributor', GithubContributor)
-    .service('webDevTec', WebDevTecService)
     .controller('MainController', MainController)
     .directive('acmeNavbar', acmeNavbar)
     .directive('acmeMalarkey', acmeMalarkey);

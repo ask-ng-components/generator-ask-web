@@ -12,12 +12,3 @@
       button.btn.btn-lg.btn-success(type="button", ng-click="main.showToastr()") Splendid Toastr
     p
       | With ♥ thanks to the contributions of #[acme-malarkey(extra-values="['Yeoman', 'Gulp', 'Angular']")]
-  .row
-    .col-sm-6.col-md-4(ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'")
-      .thumbnail
-        img.pull-right(ng-src="assets/images/{{ awesomeThing.logo }}", alt="{{ awesomeThing.title }}")
-        .caption
-          h3 {{ awesomeThing.title }}
-          p {{ awesomeThing.description }}
-          p
-            a(ng-href="{{ awesomeThing.url }}") {{ awesomeThing.url }}

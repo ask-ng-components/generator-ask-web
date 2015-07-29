@@ -1,9 +1,8 @@
 angular.module '<%- props.appName %>'
-  .controller 'MainController', ($timeout, webDevTec, toastr) ->
+  .controller 'MainController', ($timeout, toastr) ->
     'ngInject'
     vm = this
     activate = ->
-      getWebDevTec()
       $timeout (->
         vm.classAnimation = 'rubberBand'
         return
@@ -15,14 +14,6 @@ angular.module '<%- props.appName %>'
       vm.classAnimation = ''
       return
 
-    getWebDevTec = ->
-      vm.awesomeThings = webDevTec.getTec()
-      angular.forEach vm.awesomeThings, (awesomeThing) ->
-        awesomeThing.rank = Math.random()
-        return
-      return
-
-    vm.awesomeThings = []
     vm.classAnimation = ''
     vm.creationDate = <%- new Date().getTime() %>
     vm.showToastr = showToastr

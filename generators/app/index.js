@@ -9,9 +9,6 @@ module.exports = generators.Base.extend({
   constructor: function () {
     generators.Base.apply(this, arguments);
 
-    //TODO: Remove
-    this.technologies = JSON.stringify([{},{}]);
-
     this.option('src-path',{
       type: String,
       defaults: 'src',
