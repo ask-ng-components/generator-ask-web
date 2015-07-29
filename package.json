@@ -1,10 +1,10 @@
 {
   "name": "generator-ask-web",
-  "version": "0.0.0",
-  "description": "A Yeoman generator for Ask-CS web projects",
+  "version": "0.1.0",
+  "description": "Yeoman generator to scaffold web projects for Ask-CS",
   "license": "MIT",
   "main": "generators/app/index.js",
-  "repository": "askcs/generator-ask-web",
+  "repository": "ask-ng-components/generator-ask-web",
   "author": {
     "name": "Jeremy Granadillo",
     "url": "https://github.com/Blind238"
