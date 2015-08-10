@@ -1,6 +1,6 @@
 # generator-ask-web
 
-A [Yeoman](http://yeoman.io) generator to scaffold web projects for Ask-CS.
+A [Yeoman][yeoman] generator to scaffold web projects for Ask-CS.
 
 Mostly based on [generator-gulp-angular](https://github.com/Swiip/generator-gulp-angular).
 
@@ -8,7 +8,7 @@ The project will be updated periodically and will include applicable generator-g
 
 ## Installation
 
-You need [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your system (the Node.js installation should include npm by default)
+You need [Node.js][node] and [npm][npm] installed on your system (the Node.js installation should include npm by default)
 
 If you don't already have gulp, bower and Yeoman installed globally, you can do so by executing:
 
@@ -32,7 +32,7 @@ Then start the generator, by doing:
 
 The generator will then ask for the project's name (default is the current directory name in kebab-case/spinal-case). The project's main module will have that same name in camelCase (`myProject` in this example).
 
-Next, you'll need to choose between making a 'Promo website' and an 'Ask-CS application'. A 'Promo website' will have [Bootstrap](http://getbootstrap.com/) by default.
+Next, you'll need to choose between making a 'Promo website' and an 'Ask-CS application'. A 'Promo website' will have [Bootstrap][bootstrap] by default.
 
 Remaining options:
 
@@ -55,7 +55,7 @@ Remaining options:
   - ES6 (ES2015), using Babel
   - TypeScript
 
-Once done, the generator will scaffold the project and install dependencies, and your're ready to go! (installing dependencies can take some time)
+Once done, the generator will scaffold the project and install dependencies, and you're ready to go! (installing dependencies can take some time)
 
 ## Workflow
 
@@ -76,3 +76,13 @@ Things that will be worked on in the near future:
 
 ## License
 MIT
+
+[node]: https://nodejs.org/
+[npm]: https://www.npmjs.com/
+[yeoman]: http://yeoman.io/
+[gulp]: http://gulpjs.com/
+[bower]: http://bower.io/
+[angular]: https://angularjs.org/
+[bootstrap]: http://getbootstrap.com/
+[sass]: http://sass-lang.com/
+[jade]: http://jade-lang.com/
