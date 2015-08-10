@@ -43,30 +43,42 @@ module.exports = generators.NamedBase.extend({
   },
 
   writing: function () {
+    var path = this.props.paths.src + '/app/components/' + this.camelName + '/';
+
     switch (this.props.componentType) {
       case 'service':
         this.fs.copyTpl(
           this.templatePath('_service.js'),
-          this.destinationPath(this.kebabName + '.service.js'),
+          this.destinationPath(path + this.camelName + '.service.js'),
+          this
+        );
+        this.fs.copyTpl(
+          this.templatePath('_service.spec.js'),
+          this.destinationPath(path + this.camelName + '.service.spec.js'),
           this
         );
         break;
       case 'component':
         this.fs.copyTpl(
           this.templatePath('_component.html'),
-          this.destinationPath(this.kebabName + '.html'),
+          this.destinationPath(path + this.camelName + '.html'),
           this
         );
         this.fs.copyTpl(
           this.templatePath('_component.css'),
-          this.destinationPath(this.kebabName + '.css'),
+          this.destinationPath(path + this.camelName + '.css'),
           this
         );
         /* falls through */
       case 'directive':
         this.fs.copyTpl(
           this.templatePath('_directive.js'),
-          this.destinationPath(this.kebabName + '.directive.js'),
+          this.destinationPath(path + this.camelName + '.directive.js'),
+          this
+        );
+        this.fs.copyTpl(
+          this.templatePath('_directive.spec.js'),
+          this.destinationPath(path + this.camelName + '.directive.spec.js'),
           this
         );
         break;
