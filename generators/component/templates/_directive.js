@@ -8,7 +8,7 @@
     var directive = {
       restrict: 'EA',
 <% if (props.componentType === 'component') { -%>
-      templateUrl = '<%- kebabName %>.html',
+      templateUrl: '<%- camelName %>.html',
 <% } -%>
       link: link
     }
