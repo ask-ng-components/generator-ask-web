@@ -10,12 +10,24 @@
 <% if (props.componentType === 'component') { -%>
       templateUrl: '<%- camelName %>.html',
 <% } -%>
-      link: link
+      /* Use what you need, remove the rest */
+      // compile: <%- camelName %>Compile,
+      // controllerAs: 'vm',
+      // controller: <%- camelName %>Controller,
+      // link: <%- camelName %>Link
     }
     return directive;
 
-    function link(scope, element, attrs) {
+    // function <%- camelName %>Compile(tElement, tAttrs) {
+    //
+    // }
 
-    }
+    // function <%- camelName %>Controller() {
+    //   var vm = this;
+    // }
+
+    // function <%- camelName %>Link(scope, iElement, iAttrs) {
+    //
+    // }
   };
 })();
