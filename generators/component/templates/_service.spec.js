@@ -3,8 +3,6 @@
 
   describe('service <%- camelName %>', function() {
     var <%- camelName %>;
-    var $httpBackend;
-    var $log;
 
     beforeEach(module('<%- props.appName %>'));
     beforeEach(inject(function(_<%- camelName %>_) {
