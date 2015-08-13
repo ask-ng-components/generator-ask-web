@@ -100,6 +100,47 @@ module.exports = generators.Base.extend({
         return (answers.projectType === 'askApp' && answers.ui.key === 'bootstrap');
       }
     },{
+      type: 'checkbox',
+      name: 'angularModules',
+      message: 'What Angular modules would you like to have? (ngRoute and ngResource will be addressed after)',
+      choices: [
+        {
+          value: {
+            key: 'animate',
+            module: 'ngAnimate'
+          },
+          name: 'angular-animate.js (enable animation features)',
+          checked: true
+        },
+        {
+          value: {
+            key: 'cookies',
+            module: 'ngCookies'
+          },
+          name: 'angular-cookies.js (handle cookie management)',
+          checked: true
+        },
+        {
+          value: {
+            key: 'touch',
+            module: 'ngTouch'
+          },
+          name: 'angular-touch.js (for mobile development)',
+          checked: true
+        },
+        {
+          value: {
+            key: 'sanitize',
+            module: 'ngSanitize'
+          },
+          name: 'angular-sanitize.js (to securely parse and manipulate HTML)',
+          checked: true
+        }
+      ],
+      when: function(answers){
+        return answers.projectType === 'askApp';
+      }
+    },{
       type: 'list',
       name: 'jsPreprocessor',
       message: 'Which JS preprocessor do you want to use?',
@@ -170,25 +211,25 @@ module.exports = generators.Base.extend({
         extension: 'scss'
       }
       props.angularVersion = '~1.4.2';
-      props.angularModules = [{
-        key: 'animate',
-        module: 'ngAnimate'
-      },{
-        key: 'cookies',
-        module: 'ngCookies'
-      },{
-        key: 'touch',
-        module: 'ngTouch'
-      },{
-        key: 'sanitize',
-        module: 'ngSanitize'
-      }];
 
       if (props.projectType !== 'askApp') {
         props.bootstrapComponents = {
           key: 'official',
           module: null
         };
+        props.angularModules = [{
+          key: 'animate',
+          module: 'ngAnimate'
+        },{
+          key: 'cookies',
+          module: 'ngCookies'
+        },{
+          key: 'touch',
+          module: 'ngTouch'
+        },{
+          key: 'sanitize',
+          module: 'ngSanitize'
+        }];
         props.jsPreprocessor = {
           key: 'none',
           extension: 'js',
