@@ -68,32 +68,6 @@ module.exports = generators.Base.extend({
       }]
     },{
       type: 'list',
-      name: 'ui',
-      message: 'Which UI framework do you want?',
-      choices: [{
-        value: {
-          key: 'bootstrap',
-          module: null
-        },
-        name: 'Bootstrap, the most popular HTML, CSS, and JS framework'
-      },{
-        value: {
-          key: 'angular-material',
-          module: 'ngMaterial'
-        },
-        name: 'Angular Material, the reference implementation of the Material Design specification'
-      },{
-        value: {
-          key: 'none',
-          module: null
-        },
-        name: 'None'
-      }],
-      when: function(answers){
-        return answers.projectType === 'askApp';
-      }
-    },{
-      type: 'list',
       name: 'bootstrapComponents',
       message: 'How do you want to implement your Bootstrap components?',
       default: 2,
@@ -193,6 +167,10 @@ module.exports = generators.Base.extend({
     this.prompt(prompts, function (props) {
       // Add some props for scaffolding
       //TODO: These should be temporary, clean up
+      props.ui = {
+        key: 'bootstrap',
+        module: null
+      };
       props.resource = {
         key: 'angular-resource',
         module: 'ngResource'
@@ -220,10 +198,6 @@ module.exports = generators.Base.extend({
       }];
 
       if (props.projectType !== 'askApp') {
-        props.ui = {
-          key: 'bootstrap',
-          module: null
-        };
         props.bootstrapComponents = {
           key: 'official',
           module: null
