@@ -101,23 +101,6 @@ module.exports = generators.Base.extend({
       }
     },{
       type: 'list',
-      name: 'cssPreprocessor',
-      message: 'Which CSS preprocessor do you want to use?',
-      choices: [{
-        name: 'None, use regular CSS',
-        value: {
-          key: 'none',
-          extension: 'css'
-        }
-      },{
-        name: 'Sass, with node-sass (only .scss notation)',
-        value: {
-          key: 'node-sass',
-          extension: 'scss'
-        }
-      }]
-    },{
-      type: 'list',
       name: 'jsPreprocessor',
       message: 'Which JS preprocessor do you want to use?',
       choices: [{
@@ -182,6 +165,10 @@ module.exports = generators.Base.extend({
       props.jQuery = {
         key: 'jquery2'
       };
+      props.cssPreprocessor = {
+        key: 'node-sass',
+        extension: 'scss'
+      }
       props.angularVersion = '~1.4.2';
       props.angularModules = [{
         key: 'animate',
