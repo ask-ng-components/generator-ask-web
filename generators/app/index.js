@@ -97,7 +97,7 @@ module.exports = generators.Base.extend({
         name: 'No JavaScript, just CSS'
       }],
       when: function(answers){
-        return (answers.projectType === 'askApp' && answers.ui.key === 'bootstrap');
+        return (answers.projectType === 'askApp');
       }
     },{
       type: 'checkbox',
@@ -209,7 +209,7 @@ module.exports = generators.Base.extend({
       props.cssPreprocessor = {
         key: 'node-sass',
         extension: 'scss'
-      }
+      };
       props.angularVersion = '~1.4.2';
 
       if (props.projectType !== 'askApp') {
@@ -234,13 +234,6 @@ module.exports = generators.Base.extend({
           key: 'none',
           extension: 'js',
           srcExtension: 'js'
-        };
-      }
-
-      if (props.ui.key !== 'bootstrap') {
-        props.bootstrapComponents = {
-          key: null,
-          module: null
         };
       }
 
@@ -553,33 +546,6 @@ module.exports = generators.Base.extend({
   }, // end configuring
 
   writing: {
-    // app: function () {
-    //   this.fs.copy(
-    //     this.templatePath('_package.json'),
-    //     this.destinationPath('package.json')
-    //   );
-    //   this.fs.copy(
-    //     this.templatePath('_bower.json'),
-    //     this.destinationPath('bower.json')
-    //   );
-    // },
-    //
-    // projectfiles: function () {
-    //   this.fs.copy(
-    //     this.templatePath('editorconfig'),
-    //     this.destinationPath('.editorconfig')
-    //   );
-    //   this.fs.copy(
-    //     this.templatePath('jshintrc'),
-    //     this.destinationPath('.jshintrc')
-    //   );
-    // },
-
-    writeYoRc: function () {
-      // this.config.set('version', this.version);
-      // this.config.set('props', this.props);
-    },
-
     /**
      * Pass through each files and actually copy them
      */
@@ -620,82 +586,9 @@ module.exports = generators.Base.extend({
 
   default: function () {
 
-    // if (this.options.travis) {
-    //   this.composeWith('node:travis', {}, {
-    //     local: require.resolve('../travis')
-    //   });
-    // }
-
     this.composeWith('ask-web:gulp', {}, {
       local: require.resolve('../gulp')
     });
-    //
-    // this.composeWith('node:git', {
-    //   options: {
-    //     repositoryPath: this.props.repository
-    //   }
-    // }, {
-    //   local: require.resolve('../git')
-    // });
-    //
-    // this.composeWith('node:jscs', {}, {
-    //   local: require.resolve('../jscs')
-    // });
-    //
-    // this.composeWith('node:gulp', {
-    //   options: {
-    //     coveralls: this.props.includeCoveralls,
-    //     babel: this.props.babel
-    //   }
-    // }, {
-    //   local: require.resolve('../gulp')
-    // });
-    //
-    // if (this.options.boilerplate) {
-    //   this.composeWith('node:boilerplate', {
-    //     options: {
-    //       name: this.props.name,
-    //       babel: this.props.babel
-    //     }
-    //   }, {
-    //     local: require.resolve('../boilerplate')
-    //   });
-    // }
-    //
-    // if (this.options.cli) {
-    //   this.composeWith('node:cli', {
-    //     options: {
-    //       babel: this.props.babel
-    //     }
-    //   }, {
-    //     local: require.resolve('../cli')
-    //   });
-    // }
-    //
-    // this.composeWith('license', {
-    //   options: {
-    //     name: this.props.authorName,
-    //     email: this.props.authorEmail,
-    //     website: this.props.authorUrl
-    //   }
-    // }, {
-    //   local: require.resolve('generator-license/app')
-    // });
-    //
-    // if (!this.fs.exists(this.destinationPath('README.md'))) {
-    //   this.composeWith('node:readme', {
-    //     options: {
-    //       name: this.props.name,
-    //       description: this.props.description,
-    //       githubAccount: this.props.githubAccount,
-    //       authorName: this.props.authorName,
-    //       authorUrl: this.props.authorUrl,
-    //       coveralls: this.props.includeCoveralls
-    //     }
-    //   }, {
-    //     local: require.resolve('../readme')
-    //   });
-    // }
   }, // end default
 
   install: function () {
