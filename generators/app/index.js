@@ -330,7 +330,7 @@ module.exports = generators.Base.extend({
 
       if(this.props.projectType === 'askApp') {
         ngModules = ngModules.concat([
-          'ask.components.login'
+          'ask.component.login'
         ]);
       }
 
