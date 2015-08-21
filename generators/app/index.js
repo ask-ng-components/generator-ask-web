@@ -328,6 +328,12 @@ module.exports = generators.Base.extend({
         this.props.bootstrapComponents.module
       ]);
 
+      if(this.props.projectType === 'askApp') {
+        ngModules = ngModules.concat([
+          'ask.component.login'
+        ]);
+      }
+
       this.modulesDependencies = ngModules
         .filter(_.isString)
         .map(function (dependency) {
@@ -425,6 +431,10 @@ module.exports = generators.Base.extend({
           return regexp.test(file.src);
         });
         /* jshint +W040 */
+      }
+
+      if(this.props.projectType !== 'askApp') {
+        rejectWithRegexp.call(this, /login/);
       }
 
       if(this.props.cssPreprocessor.key === 'none') {

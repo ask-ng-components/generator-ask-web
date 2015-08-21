@@ -47,6 +47,9 @@
     "toastr": "~2.1.1",
     "moment": "~2.10.3",
     "animate.css": "~3.3.0",
+<% if(props.projectType === 'askApp') { -%>
+    "ask-login": "ask-ng-components/ask-login#0.1.0",
+<% } -%>
     "angular": "<%- props.angularVersion %>"
   },
   "devDependencies": {
