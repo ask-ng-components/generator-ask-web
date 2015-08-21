@@ -10,7 +10,9 @@
     "e2e/main.spec.js",
 
     "src/favicon.ico",
-    "src/assets/images/yeoman.png"
+    "src/assets/images/yeoman.png",
+    "src/app/login/login.html",
+    "src/app/login/login.scss"
   ],
   "templates": [
     ".gitignore",
@@ -29,6 +31,8 @@
     "src/index.html",
     "src/app/main/main.controller.js",
     "src/app/main/main.controller.spec.js",
+    "src/app/login/login.controller.js",
+    "src/app/login/login.controller.spec.js",
     "src/app/components/navbar/navbar.directive.js",
     "src/app/components/navbar/navbar.directive.spec.js",
     "src/app/components/malarkey/malarkey.directive.js",

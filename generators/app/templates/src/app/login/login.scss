@@ -1,0 +1,14 @@
+.login-section {
+  width: 100%;
+  background-color: $brand-primary;
+  position:absolute;
+  bottom: 0;
+  top: 0;
+
+  ask-login {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 375px;
+  }
+}
