@@ -210,7 +210,7 @@ module.exports = generators.Base.extend({
         key: 'node-sass',
         extension: 'scss'
       };
-      props.angularVersion = '~1.4.2';
+      props.angularVersion = '~1.4.4';
 
       if (props.projectType !== 'askApp') {
         props.bootstrapComponents = {
