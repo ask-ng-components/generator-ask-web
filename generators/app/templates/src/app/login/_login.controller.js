@@ -6,16 +6,30 @@
     .controller('LoginController', LoginController);
 
   /** @ngInject */
-  function LoginController($location, $timeout) {
+  function LoginController($location, $timeout, $translate) {
     var vm = this;
 
     vm.progress = null;
     vm.message = null;
     vm.submitLogin = submitLogin;
+    vm.changeLang = changeLang;
+    vm.strings = {};
 
     activate();
 
     function activate() {
+      $translate(['login.username', 'login.password', 'login.submit', 'login.remember'])
+      .then(function(translations){
+        vm.strings.username = translations['login.username'];
+        vm.strings.password = translations['login.password'];
+        vm.strings.submit = translations['login.submit'];
+        vm.strings.remember = translations['login.remember'];
+      });
+    }
+
+    function changeLang(langCode) {
+      $translate.use(langCode);
+      activate();
     }
 
     function submitLogin(username, password) {
