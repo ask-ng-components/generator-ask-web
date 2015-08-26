@@ -1,6 +1,15 @@
 <div class="container-fluid login-section">
 
-  <ask-login progress="login.progress" message="login.message" on-submit="login.submitLogin">
+  <ask-login
+    progress="login.progress"
+    message="login.message"
+    on-submit="login.submitLogin"
+    strings="login.strings">
+    <div class="login-section__content">
+      <a class="btn btn-link" ng-click="login.changeLang('en')" translate>lang.en</a>
+      |
+      <a class="btn btn-link" ng-click="login.changeLang('nl')" translate="lang.nl"></a>
+    </div>
   </ask-login>
 
 </div>

@@ -6,16 +6,37 @@
     .controller('LoginController', LoginController);
 
   /** @ngInject */
-  function LoginController($location, $timeout) {
+  function LoginController($location, $timeout, $translate, $document, tmhDynamicLocale) {
     var vm = this;
 
     vm.progress = null;
     vm.message = null;
     vm.submitLogin = submitLogin;
+    vm.changeLang = changeLang;
+    vm.strings = {};
 
     activate();
 
     function activate() {
+      $translate(['login.username', 'login.password', 'login.submit', 'login.remember'])
+      .then(function(translations){
+        vm.strings.username = translations['login.username'];
+        vm.strings.password = translations['login.password'];
+        vm.strings.submit = translations['login.submit'];
+        vm.strings.remember = translations['login.remember'];
+      });
+    }
+
+    function changeLang(langCode) {
+
+      //TODO: replace with (shared) language service
+      $translate.use(langCode);
+      // the rest should be executed after angular-translate's rootScope event
+      $document[0].documentElement.setAttribute('lang', langCode);
+      tmhDynamicLocale.set(langCode); // returns a promise
+
+      // should be executed after all of the above to refresh strings in ask-login
+      activate();
     }
 
     function submitLogin(username, password) {

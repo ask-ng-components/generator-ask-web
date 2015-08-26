@@ -328,6 +328,11 @@ module.exports = generators.Base.extend({
         this.props.bootstrapComponents.module
       ]);
 
+      ngModules = ngModules.concat([
+        'pascalprecht.translate', // angular-translate
+        'tmh.dynamicLocale' // angular-dynamic-locale
+      ]);
+
       if(this.props.projectType === 'askApp') {
         ngModules = ngModules.concat([
           'ask.component.login'

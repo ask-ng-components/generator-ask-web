@@ -108,6 +108,15 @@ gulp.task('fonts', function () {
     .pipe(gulp.dest(path.join(conf.paths.dist, '/fonts/')));
 });
 
+gulp.task('i18n', function () {
+  return gulp.src([
+    'bower_components/angular-i18n/angular-locale_en.js',
+    'bower_components/angular-i18n/angular-locale_nl.js',
+    'bower_components/angular-i18n/angular-locale_de.js'
+  ])
+  .pipe(gulp.dest(path.join(conf.paths.dist, '/angular/i18n/')));
+});
+
 gulp.task('other', function () {
   var fileFilter = $.filter(function (file) {
     return file.stat.isFile();
@@ -129,7 +138,7 @@ gulp.task('clean', function (done) {
   $.del([path.join(conf.paths.dist, '/'), path.join(conf.paths.tmp, '/')], done);
 });
 
-gulp.task('build', ['html', 'images', 'fonts', 'other']);
+gulp.task('build', ['html', 'images', 'fonts', 'i18n', 'other']);
 
 
 /**
@@ -321,7 +330,8 @@ function browserSyncInit(baseDir, browser) {
   var routes = null;
   if(baseDir === conf.paths.src || (util.isArray(baseDir) && baseDir.indexOf(conf.paths.src) !== -1)) {
     routes = {
-      '/bower_components': 'bower_components'
+      '/bower_components': 'bower_components',
+      '/angular/i18n': 'bower_components/angular-i18n'
     };
   }
 
