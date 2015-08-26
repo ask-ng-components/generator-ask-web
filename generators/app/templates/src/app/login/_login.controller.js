@@ -6,7 +6,7 @@
     .controller('LoginController', LoginController);
 
   /** @ngInject */
-  function LoginController($location, $timeout, $translate) {
+  function LoginController($location, $timeout, $translate, $document, tmhDynamicLocale) {
     var vm = this;
 
     vm.progress = null;
@@ -28,7 +28,14 @@
     }
 
     function changeLang(langCode) {
+
+      //TODO: replace with (shared) language service
       $translate.use(langCode);
+      // the rest should be executed after angular-translate's rootScope event
+      $document[0].documentElement.setAttribute('lang', langCode);
+      tmhDynamicLocale.set(langCode); // returns a promise
+
+      // should be executed after all of the above to refresh strings in ask-login
       activate();
     }
 
