@@ -12,6 +12,12 @@
     vm.progress = null;
     vm.message = null;
     vm.submitLogin = submitLogin;
+    vm.img = {
+      src: 'assets/images/yeoman.png',
+      alt: 'Yeoman tipping hat',
+      subtitle: 'The login example'
+    };
+
     vm.changeLang = changeLang;
     vm.strings = {};
 

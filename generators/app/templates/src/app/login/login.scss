@@ -15,5 +15,9 @@
     margin-left: auto;
     margin-right: auto;
     width: 375px;
+
+    &__submit-button {
+      @extend .btn-primary, .btn-block;
+    }
   }
 }
