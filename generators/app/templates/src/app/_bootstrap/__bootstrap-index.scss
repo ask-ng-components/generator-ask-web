@@ -19,12 +19,8 @@ $icon-font-path: "../<%- props.computedPaths.appToBower %>/bower_components/boot
   padding: 0.2em 0;
 }
 
-.thumbnail {
-  height: 200px;
-
-  img.pull-right {
-    width: 50px;
-  }
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
 }
 
 /**

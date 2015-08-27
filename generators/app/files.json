@@ -36,6 +36,7 @@
     "src/app/login/login.controller.spec.js",
     "src/app/components/navbar/navbar.directive.js",
     "src/app/components/navbar/navbar.directive.spec.js",
+    "src/app/components/navbarService/navbar.service.js",
     "src/app/components/malarkey/malarkey.directive.js",
     "src/app/components/malarkey/malarkey.directive.spec.js",
     "src/app/components/githubContributor/githubContributor.service.js",

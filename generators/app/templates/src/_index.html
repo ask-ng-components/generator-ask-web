@@ -30,6 +30,42 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+<% if (props.projectType === 'askApp') { -%>
+    <!-- this is an example! please replace with your own implementation -->
+    <nav ng-cloak ng-show="global.navbar" class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#ask-navbar-collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Brand</a>
+        </div>
+        <div id='ask-navbar-collapse' class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#/section-one">Section One</a>
+            </li>
+            <li>
+              <a href="#/section-two">Section Two</a>
+            </li>
+            <li>
+              <a href="#/section-three">Section Three</a>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#/login">Login example</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<% } -%>
     <%- routerHtml %>
 
     <!-- build:js(<%- props.paths.src %>) scripts/vendor.js -->

@@ -440,6 +440,7 @@ module.exports = generators.Base.extend({
 
       if(this.props.projectType !== 'askApp') {
         rejectWithRegexp.call(this, /login/);
+        rejectWithRegexp.call(this, /navbarService/);
       }
 
       if(this.props.cssPreprocessor.key === 'none') {

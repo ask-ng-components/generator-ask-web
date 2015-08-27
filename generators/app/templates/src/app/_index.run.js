@@ -6,7 +6,7 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($log) {
+  function runBlock($log<% if (props.projectType === 'askApp') { %>, navbarService<% } %>) {
 
     $log.debug('runBlock end');
   }
