@@ -50,7 +50,7 @@
     "angular-translate": "~2.7.2",
     "angular-dynamic-locale": "~0.1.27",
 <% if(props.projectType === 'askApp') { -%>
-    "ask-login": "ask-ng-components/ask-login#0.3.0",
+    "ask-login": "ask-ng-components/ask-login#~0.4.0",
 <% } -%>
     "angular-i18n": "<%- props.angularVersion %>",
     "angular": "<%- props.angularVersion %>"
