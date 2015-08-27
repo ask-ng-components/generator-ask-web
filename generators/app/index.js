@@ -140,35 +140,35 @@ module.exports = generators.Base.extend({
       when: function(answers){
         return answers.projectType === 'askApp';
       }
-    },{
-      type: 'list',
-      name: 'jsPreprocessor',
-      message: 'Which JS preprocessor do you want to use?',
-      choices: [{
-        name: 'None, use regular JavaScript (ES5)',
-        value: {
-          key: 'none',
-          extension: 'js',
-          srcExtension: 'js'
-        }
-      },{
-        name: 'ES6 (ES2015), compiled with Babel',
-        value: {
-          key: 'babel',
-          extension: 'js',
-          srcExtension: 'es6'
-        }
-      },{
-        name: 'TypeScript',
-        value: {
-          key: 'typescript',
-          extension: 'ts',
-          srcExtension: 'ts'
-        }
-      }],
-      when: function(answers){
-        return answers.projectType === 'askApp';
-      }
+    // },{
+    //   type: 'list',
+    //   name: 'jsPreprocessor',
+    //   message: 'Which JS preprocessor do you want to use?',
+    //   choices: [{
+    //     name: 'None, use regular JavaScript (ES5)',
+    //     value: {
+    //       key: 'none',
+    //       extension: 'js',
+    //       srcExtension: 'js'
+    //     }
+    //   },{
+    //     name: 'ES6 (ES2015), compiled with Babel',
+    //     value: {
+    //       key: 'babel',
+    //       extension: 'js',
+    //       srcExtension: 'es6'
+    //     }
+    //   },{
+    //     name: 'TypeScript',
+    //     value: {
+    //       key: 'typescript',
+    //       extension: 'ts',
+    //       srcExtension: 'ts'
+    //     }
+    //   }],
+    //   when: function(answers){
+    //     return answers.projectType === 'askApp';
+    //   }
     },{
       type: 'list',
       name: 'htmlPreprocessor',
@@ -210,6 +210,11 @@ module.exports = generators.Base.extend({
         key: 'node-sass',
         extension: 'scss'
       };
+      props.jsPreprocessor = {
+        key: 'none',
+        extension: 'js',
+        srcExtension: 'js'
+      };
       props.angularVersion = '~1.4.4';
 
       if (props.projectType !== 'askApp') {
@@ -230,11 +235,11 @@ module.exports = generators.Base.extend({
           key: 'sanitize',
           module: 'ngSanitize'
         }];
-        props.jsPreprocessor = {
-          key: 'none',
-          extension: 'js',
-          srcExtension: 'js'
-        };
+        // props.jsPreprocessor = {
+        //   key: 'none',
+        //   extension: 'js',
+        //   srcExtension: 'js'
+        // };
       }
 
       props.paths = {
