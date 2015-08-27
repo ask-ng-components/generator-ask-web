@@ -162,17 +162,11 @@ gulp.task('inject', ['scripts'], function () {
 <% if (props.jsPreprocessor.srcExtension === 'es6' || props.jsPreprocessor.srcExtension === 'ts') { -%>
     path.join(conf.paths.tmp, '/serve/app/**/*.module.js')
 <% } -%>
-<% if (props.jsPreprocessor.srcExtension === 'js' || props.jsPreprocessor.srcExtension === 'coffee') { -%>
+<% if (props.jsPreprocessor.srcExtension === 'js') { -%>
     path.join(conf.paths.src, '/app/**/*.module.js'),
     path.join(conf.paths.src, '/app/**/*.js'),
     path.join('!' + conf.paths.src, '/app/**/*.spec.js'),
     path.join('!' + conf.paths.src, '/app/**/*.mock.js'),
-<%   if (props.jsPreprocessor.srcExtension === 'coffee') { -%>
-    path.join(conf.paths.tmp, '/serve/app/**/*.module.js'),
-    path.join(conf.paths.tmp, '/serve/app/**/*.js'),
-    path.join('!' + conf.paths.tmp, '/serve/app/**/*.spec.js'),
-    path.join('!' + conf.paths.tmp, '/serve/app/**/*.mock.js')
-<%   } -%>
   ])
   .pipe($.angularFilesort()).on('error', conf.errorHandler('AngularFilesort'));
 <% } else {-%>
@@ -243,10 +237,6 @@ gulp.task('scripts', function () {
     .pipe($.jshint.reporter('jshint-stylish'))
 <%   } if (props.jsPreprocessor.key !== 'none') { -%>
     .pipe($.sourcemaps.init())
-<%   } if (props.jsPreprocessor.key === 'coffee') { -%>
-    .pipe($.coffeelint())
-    .pipe($.coffeelint.reporter())
-    .pipe($.coffee()).on('error', conf.errorHandler('CoffeeScript'))
 <%   } if (props.jsPreprocessor.key === 'typescript') { -%>
     .pipe($.tslint())
     .pipe($.tslint.report('prose', { emitError: false }))

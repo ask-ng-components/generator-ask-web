@@ -19,11 +19,6 @@ function listFiles() {
       path.join(conf.paths.src, '/app/**/*.js'),
       path.join(conf.paths.src, '/**/*.spec.js'),
       path.join(conf.paths.src, '/**/*.mock.js'),
-<% } else if (props.jsPreprocessor.key === 'coffee') { -%>
-      path.join(conf.paths.tmp, '/serve/app/**/*.module.js'),
-      path.join(conf.paths.tmp, '/serve/app/**/*.js'),
-      path.join(conf.paths.tmp, '/**/*.spec.js'),
-      path.join(conf.paths.tmp, '/**/*.mock.js'),
 <% } else { -%>
       path.join(conf.paths.tmp, '/serve/app/index.module.js'),
       path.join(conf.paths.src, '/**/*.spec.js'),
@@ -49,26 +44,18 @@ module.exports = function(config) {
 
     logLevel: 'WARN',
 
-<% if (props.jsPreprocessor.key === 'none' || props.jsPreprocessor.key === 'coffee') { -%>
+<% if (props.jsPreprocessor.key === 'none') { -%>
     frameworks: ['jasmine', 'angular-filesort'],
 
     angularFilesort: {
-<%   if (props.jsPreprocessor.key === 'none') { -%>
       whitelist: [path.join(conf.paths.src, '/**/!(*.html|*.spec|*.mock).js')]
-<%   } else { -%>
-      whitelist: [path.join(conf.paths.tmp, '/**/!(*.html|*.spec|*.mock).js')]
-<%   } -%>
     },
 
     reporters: ['progress', 'coverage'],
 
     preprocessors: {
       'src/**/*.html': ['ng-html2js'],
-<%   if (props.jsPreprocessor.key === 'none') { -%>
       'src/**/!(*.spec).js': ['coverage']
-<%   } else { -%>
-      '.tmp/**/!(*.spec).js': ['coverage']
-<%   } -%>
     },
 
     // optionally, configure the reporter
@@ -92,7 +79,7 @@ module.exports = function(config) {
 
     plugins : [
       'karma-phantomjs-launcher',
-<% } if (props.jsPreprocessor.key === 'none' || props.jsPreprocessor.key === 'coffee') { -%>
+<% } if (props.jsPreprocessor.key === 'none') { -%>
       'karma-angular-filesort',
       'karma-coverage',
 <% } -%>

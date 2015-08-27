@@ -465,14 +465,6 @@ module.exports = generators.Base.extend({
      * Copy additional lint files if needed
      */
     lintCopies: function () {
-      if(this.props.jsPreprocessor.key === 'coffee') {
-        this.files.push({
-          src: 'coffeelint.json',
-          dest: 'coffeelint.json',
-          template: false
-        });
-      }
-
       if(this.props.jsPreprocessor.key === 'typescript') {
         this.files.push({
           src: 'tslint.json',
