@@ -70,14 +70,14 @@ module.exports = generators.Base.extend({
       type: 'list',
       name: 'bootstrapComponents',
       message: 'How do you want to implement your Bootstrap components?',
-      default: 2,
+      default: 1,
       choices: [{
-        value: {
-          key: 'ui-bootstrap',
-          module: 'ui.bootstrap'
-        },
-        name: 'Angular UI Bootstrap, Bootstrap components written in pure AngularJS by the AngularUI Team'
-      },{
+      //   value: {
+      //     key: 'ui-bootstrap',
+      //     module: 'ui.bootstrap'
+      //   },
+      //   name: 'Angular UI Bootstrap, Bootstrap components written in pure AngularJS by the AngularUI Team'
+      // },{
         value: {
           key: 'angular-strap',
           module: 'mgcrea.ngStrap'
