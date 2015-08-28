@@ -1,8 +1,10 @@
 .container
   
+<% if (props.projectType === 'promo') { -%>
   div
     acme-navbar(creation-date="main.creationDate")
 
+<% } -%>
   .jumbotron.text-center
     h1 'Allo, 'Allo!
     p.lead
